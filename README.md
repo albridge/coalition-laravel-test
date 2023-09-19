@@ -1,12 +1,14 @@
 HOW TO INSTALL
 
 1. clone repository from github
-2. create mysql database with name of laravel-tasks
-3. open the unzipped application in your text editor eg sublime text
-4. locate the .env file and type your passowrd in the "DB_PASSWORD=" field then save .env file
-5. Go to your web browser and browser to the task-manager/public e.g http://localhost/task-manager/public/ to view and test application
+2. run composer install
+3. create mysql database with name of laravel-tasks
+4. open the unzipped application in your text editor eg sublime text
+5. locate the .env file and type your passowrd in the "DB_PASSWORD=" field then save .env file
+6. run php artisan migrate from command line to create tables
+7. run php artisan serve to start laravel server
+8. go to localhost:8000 in your browser to view application and use application
 
-6. Application sql file laravel-tasks.sql has been included in the application root folder for use
 
 
 

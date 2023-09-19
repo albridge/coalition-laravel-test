@@ -23,6 +23,6 @@
     <body class="antialiased">
         <div style="display: block; margin: auto; width: 50%; padding: 10px; border: 1px solid grey; margin-top: 100px; background-color: black; text-align: center;">
 
-          <a style="color: white;" href="{{ route('createtodo') }}">Click here to create tasks</a>
+          <a style="color: white;" href="{{ url('/task') }}">Click here to create tasks</a>
     </body>
 </html>

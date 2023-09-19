@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Livewire\Counter;
+use App\Http\Livewire\Task;
+use App\Http\Livewire\Item;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +19,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// route::get('todo',['as'=>'todo','uses'=>'\App\Http\Controllers\TaskController@todo']);
 
 route::get('create',['as'=>'createtodo','uses'=>'\App\Http\Controllers\TaskController@create']);
 
@@ -28,3 +29,11 @@ route::get('edit/{id}',['as'=>'edittodo','uses'=>'\App\Http\Controllers\TaskCont
 route::post('update',['as'=>'updatejob','uses'=>'\App\Http\Controllers\TaskController@update']);
 
 route::get('destroy/{task}',['as'=>'deletejob','uses'=>'\App\Http\Controllers\TaskController@destroy']);
+
+
+
+ 
+
+Route::get('/task', Task::class);
+
+
