@@ -1,7 +1,7 @@
 HOW TO INSTALL
 
 1. clone repository from github
-2. run composer install
+2. run composer install to install project dependences
 3. create mysql database with name of laravel-tasks
 4. open the unzipped application in your text editor eg sublime text
 5. locate the .env file and type your passowrd in the "DB_PASSWORD=" field then save .env file
