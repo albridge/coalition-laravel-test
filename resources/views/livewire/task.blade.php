@@ -1,6 +1,9 @@
 <div>
 
 <div style="margin:auto; width: 40%;">
+    <div>
+        <input type="text" name="search" id="search" style="width: 100%; margin: 20px 0px; padding:10px; border-radius:5px;" placeholder="Search" wire:model="searchTerm" wire:keydown="search" >        
+    </div>
 <button class="blue_button" wire:click="addDiv">Add Task / Cancel</button>
 </div>
 @if($showDiv)
@@ -35,7 +38,7 @@
     @endif
 <div style="">
 
-    @foreach($dbTasks as $dbTask)
+    @foreach($posts as $dbTask)
 <div style="display: flex; margin:auto; width: 40%;">
     <div style="background-color: darkblue; color: white; padding: 10px; margin-bottom: 2px; border-top-right-radius: 5px; border-top-left-radius: 5px; width: 40%; text-transform: capitalize; font-family: 'Verdana'; flex: 7; margin-right: 3px;">
         {{ $dbTask->task }}
@@ -58,4 +61,9 @@
 </div>
 
 
+<div style="display: flex; margin:auto; width: 40%;">
+    {{ $posts->links() }}
 </div>
+
+</div>
+

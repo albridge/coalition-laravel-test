@@ -10,6 +10,8 @@
         <style type="text/css">
            #taskdb, #taskdbEdit{
                 width: 100%;
+                padding: 10px;
+                border-radius: 5px;
             }
 
             .blue_button{
