@@ -94,4 +94,3 @@ function removefonta()
 
 
 // change debit and credit account heads in edit journal entry
-
