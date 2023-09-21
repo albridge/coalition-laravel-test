@@ -37,21 +37,23 @@
     </div>
     @endif
 <div drag-root wire:sortable="updateTaskOrder" wire:sortable.options="{ animation: 100 }">
-<!-- #2471A3 -->
+
     @foreach($posts as $dbTask)
-<div drag-items style="display: block; margin:auto; margin-bottom: 5px; width: 550px; cursor: pointer;  background-color: #34495E; border-radius:5px" wire:sortable.item="{{ $dbTask->id }}" wire:key="task-{{ $dbTask->id }}">
-    <div style="color: white; padding: 10px; margin-bottom: 2px; border-top-right-radius: 5px; border-top-left-radius: 5px; width: 80%; text-transform: capitalize; font-family: 'Verdana';  margin-right: 3px; display:inline-block;">
+<div drag-items style="display: flex; margin:auto; width: 40%; cursor: pointer;" wire:sortable.item="{{ $dbTask->id }}" wire:key="task-{{ $dbTask->id }}">
+    <div style="background-color: darkblue; color: white; padding: 10px; margin-bottom: 2px; border-top-right-radius: 5px; border-top-left-radius: 5px; width: 40%; text-transform: capitalize; font-family: 'Verdana'; flex: 7; margin-right: 3px;">
         {{ $dbTask->task }}
     </div>
 
-    
-    <div style="color: white; padding: 10px; margin-bottom: 2px; border-top-right-radius: 5px; border-top-left-radius: 5px; width: auto; text-transform: capitalize; font-family: 'Verdana';  margin-right: 3px; text-align:center; cursor: pointer; display:inline-block;" wire:click="edit2Task({{$dbTask->id}})">
+    <div style="background-color: darkseagreen; color: black; padding: 10px; margin-bottom: 2px; border-top-right-radius: 5px; border-top-left-radius: 5px; width: auto; text-transform: capitalize; font-family: 'Verdana'; flex: 1; margin-right: 3px; text-align:center;">
+        {{ $dbTask->priority }}
+    </div>
+    <div style="background-color: royalblue; color: white; padding: 10px; margin-bottom: 2px; border-top-right-radius: 5px; border-top-left-radius: 5px; width: auto; text-transform: capitalize; font-family: 'Verdana'; flex: 1; margin-right: 3px; text-align:center; cursor: pointer;" wire:click="edit2Task({{$dbTask->id}})">
        Edit
     </div>
-    <div style="color: white; padding: 10px; margin-bottom: 2px; border-top-right-radius: 5px; border-top-left-radius: 5px; width: auto; text-transform: capitalize; font-family: 'Verdana'; text-align:center; cursor: pointer; display:inline-block;" wire:click="deleteTask({{$dbTask->id}})">
+    <div style="background-color: indianred; color: white; padding: 10px; margin-bottom: 2px; border-top-right-radius: 5px; border-top-left-radius: 5px; width: auto; text-transform: capitalize; font-family: 'Verdana'; flex: 1; text-align:center; cursor: pointer;" wire:click="deleteTask({{$dbTask->id}})">
        x
     </div>
-     
+     <button wire:sortable.handle>drag</button>
   </div>  
     @endforeach
 

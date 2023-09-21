@@ -34,6 +34,6 @@ route::get('destroy/{task}',['as'=>'deletejob','uses'=>'\App\Http\Controllers\Ta
 
  
 
-Route::get('/task', Task::class);
+Route::any('/task', Task::class);
 
 

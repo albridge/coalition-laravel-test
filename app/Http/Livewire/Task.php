@@ -19,11 +19,13 @@ class Task extends Component
     public $showDiv = false;
     public $showDiv2 = false;
     public $searchTerm=''; // search filter term typed in search form
+    protected $paginationTheme = 'bootstrap';
 
 
     public function render()
     {
-        $this->dbTasks = tasky::where('task','LIKE',"%{$this->searchTerm}%")->orderBy('priority','desc')->paginate(3);   
+        $this->dbTasks = tasky::where('task','LIKE',"%{$this->searchTerm}%")->orderBy('priority','asc')->paginate(3);   
+        // ->orderBy('priority','desc')
         return view('livewire.task',['posts'=>$this->dbTasks]);
     }  
 
@@ -124,8 +126,24 @@ public function cancelTask()
 
 public function search()
 {
-    $this->resetPage();
-    $this->render();
+    $this->resetPage();   
+}
+
+// public function paginationView()
+// {
+//     return 'tailwind';
+// }
+
+
+public function updateTaskOrder($taskIds)
+{   
+    
+    foreach ($taskIds as $value) {       
+           
+            $rec = tasky::find($value['value']);
+            $rec->priority = $value['order'];
+            $rec->save();       
+    }
 }
 
 }
