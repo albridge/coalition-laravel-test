@@ -8,6 +8,7 @@ HOW TO INSTALL
 6. run php artisan migrate from command line to create tables
 7. run php artisan serve to start laravel server
 8. go to localhost:8000 in your browser to view application and use application
+9. sortable library uses cdn so your computer needs to be connected to the internet to experience sorting functionality
 
 
 
