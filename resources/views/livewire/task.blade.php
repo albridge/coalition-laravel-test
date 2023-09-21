@@ -36,10 +36,10 @@
         </div>
     </div>
     @endif
-<div drag-root wire:sortable="updateTaskOrder" wire:sortable.options="{ animation: 100 }">
+<div sort-root wire:sortable="updateTaskOrder" wire:sortable.options="{ animation: 100 }">
 <!-- #2471A3 -->
     @foreach($posts as $dbTask)
-<div drag-items style="display: block; margin:auto; margin-bottom: 5px; width: 550px; cursor: pointer;  background-color: #34495E; border-radius:5px" wire:sortable.item="{{ $dbTask->id }}" wire:key="task-{{ $dbTask->id }}">
+<div sort-items style="display: block; margin:auto; margin-bottom: 5px; width: 550px; cursor: pointer;  background-color: #34495E; border-radius:5px" wire:sortable.item="{{ $dbTask->id }}" wire:key="task-{{ $dbTask->id }}">
     <div style="color: white; padding: 10px; margin-bottom: 2px; border-top-right-radius: 5px; border-top-left-radius: 5px; width: 80%; text-transform: capitalize; font-family: 'Verdana';  margin-right: 3px; display:inline-block;">
         {{ $dbTask->task }}
     </div>

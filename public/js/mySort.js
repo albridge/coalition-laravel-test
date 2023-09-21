@@ -1,7 +1,7 @@
 let starty=null;
 let endy=null;
-let root = document.querySelector('[drag-root]')
-root.querySelectorAll('[drag-item]').forEach(el=>{
+let root = document.querySelector('[sort-root]')
+root.querySelectorAll('[sort-item]').forEach(el=>{
 	el.addEventListener('dragstart',e=>{
 		e.target.setAttribute('draggin',true)
 		starty = e.pageY;
@@ -30,8 +30,8 @@ root.querySelectorAll('[drag-item]').forEach(el=>{
 
 		let component = Livewire.find(e.target.closest('[wire\\:id]').getAttribute('wire:id'))
 		
-		let taskIds = Array.from(root.querySelectorAll('[drag-item]').map((it)=>{
-			it.getAttribute('drag-item');
+		let taskIds = Array.from(root.querySelectorAll('[sort-item]').map((it)=>{
+			it.getAttribute('sort-item');
 		}))
 
 		component.call('updateTaskOrder',taskIds)
@@ -75,8 +75,8 @@ function getdom(src,dest)
 {
 	let newdom = [];
 	let position=null;
-	let root1 = document.querySelector('[drag-root]')
-	root1.querySelectorAll('[drag-item]').forEach(el=>{	
+	let root1 = document.querySelector('[sort-root]')
+	root1.querySelectorAll('[sort-item]').forEach(el=>{	
 		newdom.push(el.id);	
 		
 	})	
@@ -85,8 +85,8 @@ function getdom(src,dest)
 
 function removefonta()
 {	
-	let root1 = document.querySelector('[drag-root]')
-	root1.querySelectorAll('[drag-item]').forEach(el=>{	
+	let root1 = document.querySelector('[sort-root]')
+	root1.querySelectorAll('[sort-item]').forEach(el=>{	
 		el.classList.remove('fonta')
 		
 	})		
